@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f61fad4df3e471e9ad152e084572b8b" Name="Diagram1">
+        <EntityTypeShape EntityType="VekhaNNModel.Clients" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.Departments" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.Equipment" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.OrderDetails" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.Orders" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.Products" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VekhaNNModel.RawMaterials" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="VekhaNNModel.FK__Orders__ClientID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="VekhaNNModel.FK__Equipment__Depar__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="VekhaNNModel.FK__OrderDeta__Order__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="VekhaNNModel.FK__OrderDeta__Produ__45F365D3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VekhaNNModel.ProductionTasks" Width="1.5" PointX="5.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

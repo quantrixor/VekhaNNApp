@@ -1,0 +1,38 @@
+﻿<Window x:Class="VekhaNNApp.WarehouseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VekhaNNApp"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="WarehouseWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Label Content="Название материала:" VerticalAlignment="Center" />
+            <TextBox Name="MaterialNameTextBox" Width="200" Margin="5"/>
+            <Label Content="Количество:" VerticalAlignment="Center" />
+            <TextBox Name="QuantityTextBox" Width="100" Margin="5"/>
+            <Button Content="Добавить материал" Click="AddMaterialButton_Click" Margin="5"/>
+        </StackPanel>
+
+        <DataGrid Name="MaterialsDataGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10" SelectionChanged="MaterialsDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID материала" Binding="{Binding MaterialID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Название материала" Binding="{Binding MaterialName}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Обновить материал" Click="UpdateMaterialButton_Click" Margin="5"/>
+            <Button Content="Удалить материал" Click="DeleteMaterialButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

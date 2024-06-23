@@ -1,0 +1,49 @@
+﻿<Window x:Class="VekhaNNApp.ProductionTasksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VekhaNNApp" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d"
+       Title="Управление производственными задачами"  Height="450" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <StackPanel>
+                <Label Content="Название задачи:" VerticalAlignment="Center" />
+                <TextBox Name="TaskNameTextBox" Width="200" Margin="5"/>
+                <Label Content="Описание:" VerticalAlignment="Center" />
+                <TextBox Name="DescriptionTextBox" Width="200" Margin="5"/>
+                <Button Content="Добавить задачу" Click="AddTaskButton_Click" Height="30" Width="200" Margin="5"/>
+
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Дата начала:" VerticalAlignment="Center" />
+                <DatePicker Name="StartDatePicker" Width="150" Margin="5"/>
+                <Label Content="Дата окончания:" VerticalAlignment="Center" />
+                <DatePicker Name="EndDatePicker" Width="150" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid Name="TasksDataGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID задачи" Binding="{Binding TaskID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Название задачи" Binding="{Binding TaskName}"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Дата начала" Binding="{Binding StartDate}"/>
+                <DataGridTextColumn Header="Дата окончания" Binding="{Binding EndDate}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Обновить задачу" Click="UpdateTaskButton_Click" Margin="5"/>
+            <Button Content="Удалить задачу" Click="DeleteTaskButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

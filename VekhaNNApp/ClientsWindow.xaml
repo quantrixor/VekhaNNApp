@@ -1,0 +1,39 @@
+﻿<Window x:Class="VekhaNNApp.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VekhaNNApp"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d"
+        Title="Управление клиентами" Height="450" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Label Content="Клиент:" VerticalAlignment="Center" />
+            <TextBox Name="ClientNameTextBox" Width="200" Margin="5"/>
+            <Label Content="Контактная информация:" VerticalAlignment="Center" />
+            <TextBox Name="ContactInfoTextBox" Width="200" Margin="5"/>
+            <Button Content="Добавить" Click="AddClientButton_Click" Margin="5"/>
+        </StackPanel>
+
+        <DataGrid Name="ClientsDataGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10" SelectionChanged="ClientsDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Клиент ID" Binding="{Binding ClientID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding ClientName}"/>
+                <DataGridTextColumn Header="Контактная информация" Binding="{Binding ContactInfo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Редактировать" Click="UpdateClientButton_Click" Margin="5"/>
+            <Button Content="Удалить" Click="DeleteClientButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="VekhaNNApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VekhaNNApp"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Vechan NN Management" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <Button Content="Управление клиентами" Width="250" Height="30" Margin="5" Click="ManageClientsButton_Click"/>
+            <Button Content="Управление продуктами" Width="250" Height="30" Margin="5" Click="ManageProductsButton_Click"/>
+            <Button Content="Управление складом" Width="250" Height="30" Margin="5" Click="ManageWarehouseButton_Click"/>
+            <Button Content="Управление заказами" Width="250" Height="30" Margin="5" Click="ManageOrdersButton_Click"/>
+            <Button Content="Управление производственными задачами" Width="250" Height="30" Margin="5" Click="ManageProductionTasksButton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

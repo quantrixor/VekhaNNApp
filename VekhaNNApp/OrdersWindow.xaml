@@ -1,0 +1,45 @@
+﻿<Window x:Class="VekhaNNApp.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VekhaNNApp"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Управление заказами" Height="450" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Label Content="Клиент:" VerticalAlignment="Center" />
+            <ComboBox Name="ClientComboBox" Width="200" Margin="5" DisplayMemberPath="ClientName"/>
+            <Label Content="Дата заказа:" VerticalAlignment="Center" />
+            <DatePicker Name="OrderDatePicker" Width="200" Margin="5"/>
+            <Label Content="Статус:" VerticalAlignment="Center" />
+            <ComboBox Name="StatusComboBox" Width="200" Margin="5">
+                <ComboBoxItem Content="В обработке"/>
+                <ComboBoxItem Content="Выполнен"/>
+                <ComboBoxItem Content="Отменен"/>
+            </ComboBox>
+            <Button Content="Добавить заказ" Click="AddOrderButton_Click" Margin="5"/>
+        </StackPanel>
+
+        <DataGrid Name="OrdersDataGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10" SelectionChanged="OrdersDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID заказа" Binding="{Binding OrderID}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Clients.ClientName}"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Обновить заказ" Click="UpdateOrderButton_Click" Margin="5"/>
+            <Button Content="Удалить заказ" Click="DeleteOrderButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
